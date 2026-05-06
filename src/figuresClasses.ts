@@ -7,10 +7,10 @@ export class Triangle implements Figure {
   constructor(public color: string, public a: number, public b: number, public c: number) {
     let sumArray: number[] = [this.a, this.b, this.c]
     if (sumArray.sort((a, b) => b - a)[0] >= sumArray[1] + sumArray[2]) {
-      throw new Error('your error message');
+      throw new Error('Invalid triangle: sum of any two sides must be greater than the third side');
     }
     if (this.a <= 0 || this.b <= 0 || this.c <= 0) {
-    throw new Error('your error message');
+    throw new Error('Side length must be greater than 0');
   }
   }
   shape = "triangle";
@@ -27,7 +27,7 @@ export class Triangle implements Figure {
 export class Circle implements Figure {
   constructor(public color: string, public radius: number) {
     if (this.radius <= 0) {
-      throw new Error('your error message');
+      throw new Error('Radius must be greater than 0');
     }
   }
   shape = "circle";
@@ -42,7 +42,7 @@ export class Circle implements Figure {
 export class Rectangle implements Figure {
   constructor(public color: string, public width: number, public height: number) {
     if (this.width <= 0 || this.height <= 0) {
-      throw new Error('your error message');
+      throw new Error('Width and height must be greater than 0');
     }
   }
   shape = "rectangle";
