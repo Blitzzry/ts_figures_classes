@@ -84,4 +84,5 @@ export class Rectangle implements Figure {
 
 export function getInfo(figure: Figure): string {
   return figure.getInfo();
+  
 }
